@@ -5,12 +5,13 @@ private:
   bool the_system_is_closed;
   float G[5];
   float H[5];
-  float prod[10];
+  float zeros_of_prod_plus_1[10][2];//[2] is for complex, real and then imaginary
   float ranges[4];
-
+  int m;
+  int n;
 
 public:
-  Controller(int inppin, int outpin, float g[], float h[], float Prod[],
+  Controller(int inppin, int outpin, float g[], float h[], float Prod_z[],
              bool isClosed);
   virtual float zinput();
   virtual float zCalcOnce(float inp);
